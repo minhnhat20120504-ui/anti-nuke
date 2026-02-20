@@ -28,7 +28,7 @@ const client = new Client({
 
 /* ================= CONFIG ================= */
 const PREFIX = "n.";
-const LIMIT = 1;
+const LIMIT = 2;
 const TIME = 10000;
 const LOG_CHANNEL_ID = "1474282173656989716";
 
@@ -66,7 +66,7 @@ async function punish(guild, user, reason) {
 
     await member.ban({ reason }).catch(() => {});
 
-    const logChannel = guild.channels.cache.get(LOG_CHANNEL_ID);
+    const logChannel = guild.channels.cache.get(1474282173656989716);
     if (!logChannel) return;
 
     const embed = new EmbedBuilder()
@@ -91,7 +91,7 @@ const commands = [
     .setName("antinuke")
     .setDescription("Bật/tắt anti nuke")
     .addStringOption(opt =>
-      opt.setName("trangthai")
+      opt.setName("Trạng thái")
         .setDescription("on hoặc off")
         .setRequired(true)
         .addChoices(
