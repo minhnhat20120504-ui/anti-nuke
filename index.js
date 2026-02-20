@@ -89,10 +89,10 @@ async function punish(guild, user, reason) {
 const commands = [
   new SlashCommandBuilder()
     .setName("antinuke")
-    .setDescription("Bật/tắt anti nuke")
+    .setDescription("on/off anti nuke")
     .addStringOption(opt =>
-      opt.setName("Trạng thái")
-        .setDescription("on hoặc off")
+      opt.setName("status")
+        .setDescription("on or off")
         .setRequired(true)
         .addChoices(
           { name: "on", value: "on" },
