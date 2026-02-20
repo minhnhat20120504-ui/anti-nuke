@@ -28,7 +28,7 @@ const client = new Client({
 
 /* ================= CONFIG ================= */
 const PREFIX = "n.";
-const LIMIT = 3;
+const LIMIT = 1;
 const TIME = 10000;
 const LOG_CHANNEL_ID = "1474282173656989716";
 
