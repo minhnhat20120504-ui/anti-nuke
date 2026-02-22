@@ -66,7 +66,7 @@ async function punish(guild, user, reason) {
 
     await member.ban({ reason }).catch(() => {});
 
-    const logChannel = guild.channels.cache.get(1474282173656989716);
+    const logChannel = guild.channels.cache.get(LOG_CHANNEL_ID);
     if (!logChannel) return;
 
     const embed = new EmbedBuilder()
