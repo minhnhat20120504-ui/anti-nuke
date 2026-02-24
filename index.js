@@ -124,7 +124,7 @@ client.on("interactionCreate", async interaction => {
 
   if (!isOwner(interaction.guild, interaction.user.id)) {
     return interaction.reply({
-      content: "❌ Chỉ chủ server dùng được.",
+      content: "❌ Mày Đéo Có Vị Để Bật.",
       ephemeral: true
     });
   }
