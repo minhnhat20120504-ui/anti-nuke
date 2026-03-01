@@ -125,7 +125,7 @@ client.on("interactionCreate", async interaction => {
 
   if (!isOwner(interaction.guild, interaction.user.id)) {
     return interaction.reply({
-      content: "❌ Mày Đéo Có Vị Để Bật.",
+      content: "❌ Mày Đéo Có Vị Để Bật Hoặc Tắt.",
       ephemeral: true
     });
   }
@@ -150,7 +150,7 @@ client.on("messageCreate", async msg => {
 
   if (cmd === "antinuke") {
     if (!isOwner(msg.guild, msg.author.id)) {
-      return msg.reply("❌ Mày Đéo Có Vị Để Bật");
+      return msg.reply("❌ Mày Đéo Có Vị Để Bật Hoặc Tắt");
     }
 
     const state = args[0];
