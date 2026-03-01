@@ -27,7 +27,7 @@ const client = new Client({
 });
 
 /* ================= CONFIG ================= */
-const PREFIX = "n.";
+const PREFIX = "$";
 const LIMIT = 2;
 const TIME = 10000;
 const LOG_CHANNEL_ID = "1474282173656989716";
@@ -91,7 +91,8 @@ const commands = [
     .setName("antinuke")
     .setDescription("on/off anti nuke")
     .addStringOption(opt =>
-      opt.setName("status")
+      opt
+        .setName("status") // ⚠️ tên option
         .setDescription("on or off")
         .setRequired(true)
         .addChoices(
@@ -129,7 +130,7 @@ client.on("interactionCreate", async interaction => {
     });
   }
 
-  const state = interaction.options.getString("trangthai");
+  const state = interaction.options.getString("status");
   const enabled = state === "on";
 
   antiNukeStatus.set(interaction.guild.id, enabled);
@@ -149,12 +150,12 @@ client.on("messageCreate", async msg => {
 
   if (cmd === "antinuke") {
     if (!isOwner(msg.guild, msg.author.id)) {
-      return msg.reply("❌ Chỉ chủ server dùng được.");
+      return msg.reply("❌ Mày Đéo Có Vị Để Bật");
     }
 
     const state = args[0];
     if (!["on", "off"].includes(state)) {
-      return msg.reply("Dùng: n.antinuke on/off");
+      return msg.reply("Dùng: $antinuke on/off");
     }
 
     const enabled = state === "on";
