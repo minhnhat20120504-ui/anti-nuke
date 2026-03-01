@@ -64,7 +64,7 @@ async function punish(guild, user, reason) {
 
     if (isOwner(guild, user.id)) return;
 
-    await member.ban({ reason }).catch(() => {});
+    await member.kick({ reason }).catch(() => {});
 
     const logChannel = guild.channels.cache.get(1474282173656989716);
     if (!logChannel) return;
